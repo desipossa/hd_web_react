@@ -13,7 +13,12 @@ const Header = () => {
     const [TG, setTG] = useState([false, false]);
     const HL = useRef();
     useEffect(() => {
-        window.addEventListener("scroll",)
+        window.addEventListener("scroll", () => {
+            let sct = window.scrollY;
+            sct > 0
+                ? HL.current.classList.add('on')
+                : HL.current.classList.remove('on')
+        })
     }, [])
     //const [TS, setTS] = useState(false);
     return (
