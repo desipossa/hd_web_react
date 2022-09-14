@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TopBanner from './TopBanner';
 
 const NAVLINK = [
@@ -11,9 +11,13 @@ const NAVLINK = [
 
 const Header = () => {
     const [TG, setTG] = useState([false, false]);
+    const HL = useRef();
+    useEffect(() => {
+        window.addEventListener("scroll",)
+    }, [])
     //const [TS, setTS] = useState(false);
     return (
-        <header className="Header">
+        <header className="Header" ref={HL}>
             <TopBanner />
             <div className="hd_wrap">
                 <h1>
