@@ -47,10 +47,9 @@ const Header = () => {
                             <li><a href="#!">CHN</a></li>
                         </ul>
                     </div>
-                    <div className={`top_search ` + (TG[1] ? 'on' : '')}>
+                    <div className={'top_search ' + (TG[1] ? 'on' : '')}>
                         <strong onClick={() => setTG([false, !TG[1]])}><i className="xi-search"></i></strong>
                         <div className="search_box">
-
                             <form action="#!">
                                 <input type="text" placeholder="검색어를 입력하세요" required />
                                 <button>

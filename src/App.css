@@ -12,6 +12,24 @@
   margin: 0 auto;
 }
 
+.cbtn {
+  display: inline-block;
+  padding: 15px 25px;
+  border: 1px solid var(--mc);
+  color: var(--mc);
+  font-size: 13px;
+  background: var(--lc);
+}
+
+.cbtn::after {
+  content: "\e93e";
+  font-family: xeicon;
+  display: inline-block;
+  margin: 0 0 0 10px;
+  font-size: 10px;
+  vertical-align: 1px;
+}
+
 .TopBanner {
   background: var(--mc);
   color: var(--lc);
@@ -260,6 +278,20 @@
   transform: translate(-50%, -50%);
 }
 
+.MainVisual .tit {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  text-shadow: 0 0 2px var(--dc);
+}
+
+.MainVisual .des {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  text-shadow: 0 0 1px var(--dc);
+}
+
 .MainVisual .slick-track,
 .MainVisual .slick-slide {
   transition-duration: 5ms;
@@ -274,10 +306,25 @@
 
 .MainVisual .slideTab {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 155px);
   left: 50%;
   transform: translate(-100%, -50%);
   margin: 0 0 0 600px;
+}
+
+.MainVisual .slideTab li {
+  text-align: right;
+  margin: 0 0 20px 0;
+}
+
+.MainVisual .slideTab li::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--lc);
+  margin: 0 0 0 15px;
+  vertical-align: middle;
 }
 
 .MainVisual .slideArrows button {
