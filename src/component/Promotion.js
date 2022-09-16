@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import YouTube from 'react-youtube';
 
+const UURL = [
+    { id: 1, url: "raw3Nu0_mBQ", title: "IT Technology", des: "IT 기술이 창조하는 승강기 스마트 시스템" },
+    { id: 2, url: "raw3Nu0_mBQ", title: "Green Technology", des: "지구환경을 생각하는 녹색기술" },
+]
+
 const Promotion = () => {
     const MOVIE = useRef();
+
     const [url, setUrl] = useState('raw3Nu0_mBQ');
 
     const opts = {
@@ -10,7 +16,7 @@ const Promotion = () => {
         width: '100%',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
+            autoplay: 0,
             loop: 1,
             controls: 0,
             showinfo: 0,
@@ -18,7 +24,8 @@ const Promotion = () => {
             // autohide: 1,
             // playsinline: 1,
             mute: 1,
-            playlist: url,
+            // playlist: 'raw3Nu0_mBQ',
+            paused: 1,
         },
 
     };
@@ -35,19 +42,21 @@ const Promotion = () => {
                 </div>
 
 
-                <div className="des">
-                    <div className='left' onClick={() => setUrl('raw3Nu0_mBQ')}>
-                        <h3>IT Technology</h3>
-                        <p>IT 기술이 창조하는 승강기 스마트 시스템</p>
-                    </div>
-                    <button>
-                        <i className='xi-arrow-top'></i>
-                    </button>
-                    <div className='right' onClick={() => setUrl('beaUbnjlu14')}>
-                        <h3>Green Technology</h3>
-                        <p> 지구환경을 생각하는 녹색기술</p>
-                    </div>
-                </div>
+                <ul className="des">
+                    {/* <button onClick={() => setUrl('raw3Nu0_mBQ')}>01 movie</button>
+                    <button onClick={() => setUrl('LSjWhFP1smA')}>02 movie</button>
+                    <button onClick={() => setUrl('np4OQJPnij0')}>03 movie</button> */}
+                    {
+                        UURL.map((you, idx) => {
+                            return (
+                                <li key={you.id}>
+                                    <div className='tit'>{you.title}</div>
+                                    <p>{you.des}</p>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         </section >
     )
