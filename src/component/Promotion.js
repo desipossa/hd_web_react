@@ -3,13 +3,14 @@ import YouTube from 'react-youtube';
 
 const UURL = [
     { id: 1, url: "raw3Nu0_mBQ", title: "IT Technology", des: "IT 기술이 창조하는 승강기 스마트 시스템" },
-    { id: 2, url: "raw3Nu0_mBQ", title: "Green Technology", des: "지구환경을 생각하는 녹색기술" },
+    { id: 2, url: "LSjWhFP1smA", title: "Green Technology", des: "지구환경을 생각하는 녹색기술" },
 ]
 
 const Promotion = () => {
     const MOVIE = useRef();
 
     const [url, setUrl] = useState('raw3Nu0_mBQ');
+    const [tit, setTit] = useState(0);
 
     const opts = {
         height: '100%',
@@ -39,17 +40,22 @@ const Promotion = () => {
             <div className="container">
                 <div className='movie' ref={MOVIE} id='player' >
                     <YouTube videoId={url} opts={opts} className='u' />
+                    <div className="movie_title">
+                        {
+                            UURL[tit].title
+                        }
+                    </div>
                 </div>
 
-
                 <ul className="des">
-                    {/* <button onClick={() => setUrl('raw3Nu0_mBQ')}>01 movie</button>
-                    <button onClick={() => setUrl('LSjWhFP1smA')}>02 movie</button>
-                    <button onClick={() => setUrl('np4OQJPnij0')}>03 movie</button> */}
                     {
                         UURL.map((you, idx) => {
                             return (
-                                <li key={you.id}>
+                                <li key={you.id} onClick={() => {
+                                    setUrl(you.url);
+                                    setTit(idx)
+                                }} className={tit === idx ? "on" : ""}
+                                >
                                     <div className='tit'>{you.title}</div>
                                     <p>{you.des}</p>
                                 </li>
