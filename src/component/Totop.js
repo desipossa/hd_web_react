@@ -47,7 +47,9 @@ const Totop = () => {
         return () => {
             window.removeEventListener('scroll', scrllEvent);
         }
-    }, [])
+    }, []);
+
+
     return (
         <Btn onClick={totopHandler} className={scrollY > 400 && 'on'}>
             <i className='xi-arrow-top'></i>
